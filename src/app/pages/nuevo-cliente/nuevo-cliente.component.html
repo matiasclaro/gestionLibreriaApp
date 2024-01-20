@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+        <div class="mb-3">
+            <label for="nombreCompleto" class="form-label">Nombre</label>
+            <input [ngClass]="{'is-invalid':hasErrors('nombre','required')}" 
+            type="text" class="form-control" id="nombreCompleto" formControlName="nombre">
+            <div  class="text-danger" *ngIf="hasErrors('nombre','required')">
+                Campo requerido.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input [ngClass]="{'is-invalid':hasErrors('apellido','required')}"
+            type="text" class="form-control" id="apellido"formControlName="apellido">
+            <div  class="text-danger" *ngIf="hasErrors('apellido','required')">
+                Campo requerido.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input [ngClass]="{'is-invalid':hasErrors('email','email')||hasErrors('email','required')}" 
+            type="email" class="form-control" id="email" formControlName="email">
+            <div  class="text-danger" *ngIf="hasErrors('email','email')">
+                Email no valido.
+            </div>
+            <div  class="text-danger" *ngIf="hasErrors('email','required')">
+                Campo requerido.
+            </div>            
+        </div>
+        <div class="mb-3">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" formControlName="telefono">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>      

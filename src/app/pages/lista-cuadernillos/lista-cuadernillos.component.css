@@ -1,0 +1,17 @@
+
+/* estilos.css */
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Ajustes para el th de Acciones */
+th[colspan="2"] {
+  width: 1%; /* Asegura que el ancho del th se ajuste automáticamente al contenido */
+}
+
+/* Ajustes para que los botones tengan un ancho máximo */
+.botones button {
+    max-width: 48%; /* Ancho máximo igual al ancho del contenedor con un pequeño espacio entre botones */
+    margin-right: 4px; /* Ajusta el margen entre los botones según tus preferencias */
+}

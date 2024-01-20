@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>Lista Pedidos</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Cuadernillos</th>
+                <th scope="col">Seña</th>
+                <th scope="col">Fecha Pedido</th>
+                <th scope="col">Fecha Entrega</th>
+                <th scope="col">Total</th>
+                <th scope="col" colspan="2">Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @for (pedido of listaPedidos; track $index) {
+            <tr>
+                <th scope="row">{{pedido.id}}</th>
+                <td>{{pedido.nombre}}</td>
+                <td>{{pedido.precio | currency }}</td>
+                <td>{{pedido.descripcion}}</td>
+                <td>{{pedido.cantHojas}}</td>
+                <td class="botones">
+                    <button type="button" class="btn btn-outline-success btn-sm"
+                        (click)="navigate(pedido.id)">Editar</button>
+                    <button type="button" class="btn btn-outline-danger btn-sm"
+                        (click)="deletePedido(pedido.id)">Eliminar</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

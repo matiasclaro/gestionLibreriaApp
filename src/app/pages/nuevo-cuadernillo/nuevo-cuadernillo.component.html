@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="formularioCuadernillo" (ngSubmit)="enviar()">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input [ngClass]="{'is-invalid':hasErrors('nombre','required')}" 
+            type="text" class="form-control" id="nombreCompleto" formControlName="nombre">
+            <div  class="text-danger" *ngIf="hasErrors('nombre','required')">
+                Campo requerido.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio</label>
+            <input [ngClass]="{'is-invalid':hasErrors('precio','required')}"
+            type="number" class="form-control" id="precio"formControlName="precio">
+            <div  class="text-danger" *ngIf="hasErrors('precio','required')">
+                Campo requerido.
+            </div>
+            
+        </div>
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input  type="email" class="form-control" id="email" formControlName="descripcion">         
+        </div>
+        <div class="mb-3">
+            <label for="cantHojas" class="form-label">Paginas</label>
+            <input [ngClass]="{'is-invalid':hasErrors('cantHojas','requerid')}" 
+            type="number" class="form-control" id="cantHojas" formControlName="cantHojas">
+            <div  class="text-danger" *ngIf="hasErrors('cantHojas','required')">
+                Campo requerido.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="formatoImpresion" class="form-label">Formato Impresion</label>
+            <input type="text" class="form-control" id="formatoImpresion" formControlName="formatoImpresion">
+            <div  class="text-danger" *ngIf="hasErrors('formatoImpresion','required')">
+                Campo requerido.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

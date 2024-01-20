@@ -1,0 +1,30 @@
+<div class="container"><h2>Lista Clientes</h2>
+<table class="table table-dark table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Email</th>
+        <th scope="col"colspan="2">Acciones</th>
+
+    </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @for (cliente of listaClientes; track $index) {
+    <tr>
+        <th scope="row">{{cliente.id}}</th>
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.apellido}}</td>
+        <td>{{cliente.telefono}}</td>
+        <td>{{cliente.email}}</td>
+        <td class="botones">
+            <button type="button"  class="btn btn-outline-success btn-sm" (click)="navigate(cliente.id)">Editar</button>
+            <button type="button"  class="btn btn-outline-danger btn-sm" (click)="deleteCliente(cliente.id)">Eliminar</button>
+        </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
