@@ -2,58 +2,60 @@
     <form [formGroup]="formularioPedido" (ngSubmit)="enviar()">
         <div class="mb-3">
             <label for="cliente" class="form-label">Cliente</label>
-            <input [ngClass]="{'is-invalid':hasErrors('cliente','required')}" 
-            type="text" class="form-control" id="clienteCompleto" formControlName="cliente">
-            <div  class="text-danger" *ngIf="hasErrors('cliente','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('cliente','required')}" type="text" class="form-control"
+                id="clienteCompleto" formControlName="cliente">
+            <div class="text-danger" *ngIf="hasErrors('cliente','required')">
                 Campo requerido.
             </div>
         </div>
+        
         <div class="mb-3">
             <label for="cuadernillos" class="form-label">Cuadernillos</label>
-            <input [ngClass]="{'is-invalid':hasErrors('cuadernillos','required')}"
-            type="text" class="form-control" id="cuadernillos"formControlName="cuadernillos">
-            <div  class="text-danger" *ngIf="hasErrors('cuadernillos','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('cuadernillos','required')}" type="text" class="form-control"
+                id="cuadernillos" formControlName="cuadernillos">
+            <div class="text-danger" *ngIf="hasErrors('cuadernillos','required')">
                 Campo requerido.
             </div>
-            
+
         </div>
         <div class="mb-3">
             <label for="fechaPedido" class="form-label">Fecha Pedido</label>
-             <input [ngClass]="{'is-invalid':hasErrors('fechaPedido','required')}"  
-             type="text" class="form-control" id="fechaPedido" formControlName="fechaPedido">
-            <div  class="text-danger" *ngIf="hasErrors('fechaPedido','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('fechaPedido','required')}" type="text" class="form-control"
+                id="fechaPedido" formControlName="fechaPedido">
+            <div class="text-danger" *ngIf="hasErrors('fechaPedido','required')">
                 Campo requerido.
-            </div>         
+            </div>
         </div>
         <div class="mb-3">
             <label for="fechaEntrega" class="form-label">Fecha Entrega</label>
-            <input [ngClass]="{'is-invalid':hasErrors('fechaEntrega','required')}"
-              type="text" class="form-control" id="fechaEntrega" formControlName="fechaEntrega">
-              <div  class="text-danger" *ngIf="hasErrors('fechaEntrega','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('fechaEntrega','required')}" type="text" class="form-control"
+                id="fechaEntrega" formControlName="fechaEntrega">
+            <div class="text-danger" *ngIf="hasErrors('fechaEntrega','required')">
                 Campo requerido.
-            </div>         
+            </div>
         </div>
-        
+
         <div class="mb-3">
             <label for="seña" class="form-label">Seña</label>
-            <input  [ngClass]="{'is-invalid':hasErrors('seña','required')}"
-             type="text" class="form-control" id="seña" formControlName="seña">   
-            <div  class="text-danger" *ngIf="hasErrors('seña','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('seña','required')}" type="text" class="form-control" id="seña"
+                formControlName="seña">
+            <div class="text-danger" *ngIf="hasErrors('seña','required')">
                 Campo requerido.
-          
+
+            </div>
         </div>
-    </div>
         <div class="mb-3">
             <label for="total" class="form-label">Total</label>
-            <input  [ngClass]="{'is-invalid':hasErrors('total','required')}"
-             type="text" class="form-control" id="total" formControlName="total"> 
-            <div  class="text-danger" *ngIf="hasErrors('total','required')">
+            <input [ngClass]="{'is-invalid':hasErrors('total','required')}" type="text" class="form-control" id="total"
+                formControlName="total">
+            <div class="text-danger" *ngIf="hasErrors('total','required')">
                 Campo requerido.
-            
+
+            </div>
         </div>
-    </div>
-        
-        
-                <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-primary ms-2" (click)="cancelar()">Cancelar</button>
+        </div>
+        </form>
 </div>

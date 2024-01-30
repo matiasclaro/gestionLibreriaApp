@@ -1,6 +1,8 @@
+import { Cuadernillo } from "./cuadernillo"
+
 export interface Pedido {
     cliente:string,
-    cuadernilos:string,
+    cuadernillos:Cuadernillo[];
     fechaPedido:string,
     fechaEntrega:string,
     seña:string,

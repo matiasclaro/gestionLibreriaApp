@@ -2,6 +2,7 @@ import { Component, Input, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CuadernilloService } from '../../service/cuadernillo.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nuevo-cuadernillo',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './nuevo-cuadernillo.component.css'
 })
 export class NuevoCuadernilloComponent implements OnInit{
-  
+  private _router = inject(Router);
   ngOnInit(): void {
     
   }
@@ -51,4 +52,7 @@ export class NuevoCuadernilloComponent implements OnInit{
     return this.formularioCuadernillo.get(controlName)?.hasError(errorType) &&
     this.formularioCuadernillo.get(controlName)?.touched
   }
+  public cancelar(){
+    this._router.navigate(['']);
+}
 }
