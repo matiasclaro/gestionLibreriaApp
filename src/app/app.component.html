@@ -30,13 +30,18 @@
           (click)= "onOption('nuevo-cuadernilllo')" >Nuevo Cuadernillo</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="lista-clientes"[ngClass]="{active: menuOption == 'clientes'}"
-          (click)= "onOption('clientes')" >Clientes</a>
+          <a class="nav-link" routerLink="lista-clientes"[ngClass]="{active: menuOption == 'lista-clientes'}"
+          (click)= "onOption('lista-clientes')" >Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="nuevo-cliente"[ngClass]="{active: menuOption == 'nuevo-cliente'}"
           (click)= "onOption('nuevo-cliente')" >Nuevo Cliente</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="prueba"[ngClass]="{active: menuOption == 'prueba'}"
+          (click)= "onOption('prueba')" >Prueba</a>
+        </li>
+       
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

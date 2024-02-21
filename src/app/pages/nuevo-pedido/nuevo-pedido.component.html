@@ -1,3 +1,4 @@
+<br>
 <div class="container">
     <form [formGroup]="formularioPedido" (ngSubmit)="enviar()">
         <div class="mb-3">
@@ -9,14 +10,36 @@
             </div>
         </div>
         
-        <div class="mb-3">
-            <label for="cuadernillos" class="form-label">Cuadernillos</label>
-            <input [ngClass]="{'is-invalid':hasErrors('cuadernillos','required')}" type="text" class="form-control"
-                id="cuadernillos" formControlName="cuadernillos">
-            <div class="text-danger" *ngIf="hasErrors('cuadernillos','required')">
-                Campo requerido.
-            </div>
-
+        <div class="mb-3" >
+            <div [formGroup]="formularioBuscador">
+            <input type="text" placeholder="Buscar" class="form-control"formControlName="buscador"(input)="actualizarBusqueda()">
+        </div>
+        
+        <div >
+        <table>
+                <thead *ngIf="(listCuadernillos | pipes:campoBuscador).length > 0">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Paginas</th>
+                        <th scope="col" colspan="2">Acciones</th>
+                    </tr>
+                    </thead>    
+                    <tbody class="table-group-divider">
+                        @for (cuadernillo of listCuadernillos|pipes:campoBuscador; track $index) {
+                            <tr>
+                                <th scope="row">{{cuadernillo.id}}</th>
+                                <td>{{cuadernillo.nombre}}</td>
+                                <td>{{ cuadernillo.precio | currency }}</td>
+                                <td>{{cuadernillo.descripcion}}</td>
+                                <td>{{cuadernillo.cantHojas}}</td>
+                            </tr>
+                            }
+                    </tbody>
+            </table>
+        </div>
         </div>
         <div class="mb-3">
             <label for="fechaPedido" class="form-label">Fecha Pedido</label>
@@ -41,7 +64,6 @@
                 formControlName="seña">
             <div class="text-danger" *ngIf="hasErrors('seña','required')">
                 Campo requerido.
-
             </div>
         </div>
         <div class="mb-3">
@@ -50,12 +72,12 @@
                 formControlName="total">
             <div class="text-danger" *ngIf="hasErrors('total','required')">
                 Campo requerido.
-
             </div>
         </div>
         <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary">Guardar</button>
             <button type="button" class="btn btn-primary ms-2" (click)="cancelar()">Cancelar</button>
         </div>
-        </form>
+    </form>
 </div>
+<br>

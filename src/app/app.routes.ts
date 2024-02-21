@@ -6,6 +6,7 @@ import { ListaPedidosComponent } from './pages/lista-pedidos/lista-pedidos.compo
 import { NuevoClienteComponent } from './pages/nuevo-cliente/nuevo-cliente.component';
 import { NuevoCuadernilloComponent } from './pages/nuevo-cuadernillo/nuevo-cuadernillo.component';
 import { NuevoPedidoComponent } from './pages/nuevo-pedido/nuevo-pedido.component';
+import { PruebaComponent } from './pages/prueba/prueba.component';
 
 export const routes: Routes = [
     {path:'', component:HomeComponent},
@@ -16,6 +17,6 @@ export const routes: Routes = [
     {path:'nuevo-cuadernillo', component:NuevoCuadernilloComponent},
     {path:'nuevo-cuadernillo/:id', component:NuevoCuadernilloComponent},
     {path:'nuevo-pedido', component:NuevoPedidoComponent},
-    {path:'**', redirectTo:'',pathMatch:'full'}
-    
+    {path:'prueba', component:PruebaComponent},
+    {path:'**', redirectTo:'',pathMatch:'full'},
 ];
